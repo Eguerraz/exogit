@@ -21,10 +21,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-var varRouter = express.Router();
-varRouter.get('/', (req, res) => {
-  res.end("Prochaine fois que je te vois utiliser des var je sabote ton oral de titre CDA");
-});
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
