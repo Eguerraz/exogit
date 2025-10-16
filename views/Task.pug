@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  h1 ToDo Liste
+
+  //- Barre de filtres
+  form#filters(action="/task" method="get")
+    div
+      label(for="done") Terminé :
+      select(name="done" id="done")
+        option(value="") aucun
+        option(value="true") Oui
+        option(value="false") Non
+    div
+      label(for="titre") Titre :
+      input(type="text" name="titre" id="titre" placeholder="Recherche par titre")
+    div
+      label(for="retard") En retard :
+      select(name="retard" id="retard")
+        option(value="") aucun
+        option(value="true") Oui
+        option(value="false") Non
+    button(type="button" id="applyFilters") Appliquer les filtres
+
+  hr
+
+  //- Liste des tâches
+  div#tasks
+    p Chargement des tâches...
+
