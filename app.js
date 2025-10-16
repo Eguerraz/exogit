@@ -4,9 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var fautbiennommersesvariablesRouter = require('./routes/Task');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const TaskRouter = require('./routes/Task');
+
 
 var app = express();
 
@@ -27,8 +28,8 @@ varRouter.get('/', (req, res) => {
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/var', varRouter);
-console.log("Et si on utilisait des const à la places des var pour éviter ce genre de problème ?");
+app.use('/Task', TaskRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
