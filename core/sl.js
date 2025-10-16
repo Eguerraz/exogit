@@ -1,5 +1,6 @@
 const mysql = require('mysql2/promise');
 
+console.log("Pas mal la faut de frappe dans le nom du fichier");
 // Fonction pour créer une connexion à la base MySQL
 function getConnection() {
   const connection =  mysql.createConnection({
